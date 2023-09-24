@@ -22,6 +22,7 @@
 int yieldStart = int.Parse(Console.ReadLine());
 int spice = 0;
 int dayWork = 0;
+
 while (yieldStart >= 100)
 {
 
