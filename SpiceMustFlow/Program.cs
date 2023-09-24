@@ -1,23 +1,14 @@
 ﻿
 
-//Създайте програма, която изчислява общото количество подправка, което може да бъде извлечено от източник.
-//Източникът има начален добив, който показва колко подправки могат да бъдат добити през първия ден.
-//След като е бил добит за един ден, добивът пада с 10,
-//което означава, че на втория ден ще произведе 10 по-малко подправки, отколкото през първия,
-//на третия ден 10 по-малко, отколкото през втория и т.н. (вижте примерите) .
-//.Един източник се счита за печеливш само ако добивът му е най-малко 100 –
-//когато се очакват по-малко от 100 подправки на ден, изоставете източника.
-//Миньорският екип консумира 26 подправки всеки ден в края на смяната си и още 26,
-//след като мината е изчерпана. Имайте предвид, че работниците не могат да консумират повече подправки,
-//отколкото има в склада.
-//Когато операцията приключи, отпечатайте на конзолата на два отделни реда колко дни е работила мината
-//и общото количество извлечена подправка.
-//Вход
-//Ще получите число, представляващо началния добив на източника.
-//Изход
-//Отпечатайте на конзолата, на два отделни реда, колко дни е работила мината и общото количество извлечена подправка.
-//  Ограничения
-//• Началната доходност ще бъде положително цяло число в диапазона [0…2147483647].
+Create a program that calculates the total amount of spice that can be extracted from a source. The source has a starting yield, which indicates how much spice can be mined on the first day. After it has been mined for a day, the yield drops by 10, meaning on the second day it'll produce 10 less spice than on the first, on the third day 10 less than on the second, and so on (see examples). A source is considered profitable only while its yield is at least 100 – when less than 100 spices are expected in a day, abandon the source.  
+The mining crew consumes 26 spices every day at the end of their shift and an additional 26 after the mine has been exhausted. Note that the workers cannot consume more spice than there is in storage.  
+When the operation is complete, print on the console, on two separate lines, how many days the mine has operated and the total amount of spice extracted. 
+Input  
+You will receive a number, representing the starting yield of the source.  
+Output  
+Print on the console, on two separate lines, how many days the mine has operated and the total amount of spice extracted. 
+ Constraints  
+	• 	The starting yield will be a positive integer within the range [0…2147483647]. 
 
 int yieldStart = int.Parse(Console.ReadLine());
 int spice = 0;
@@ -26,6 +17,13 @@ while (yieldStart >= 100)
 {
 
     dayWork++;
-    spice+= yieldStart;
-    yieldStart -= 10;
+    spice+= yieldStart -26;//26 подправки всеки ден за работниците
+    yieldStart -= 10;// добивът пада с 10
 }
+if (yieldStart < 100 && dayWork == 0)
+{
+    Console.WriteLine($"{dayWork}");
+    Console.WriteLine($"{spice}");
+}
+else { spice -= 26; Console.WriteLine($"{dayWork}"); }
+Console.WriteLine($"{spice}");
