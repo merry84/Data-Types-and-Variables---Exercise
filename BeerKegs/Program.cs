@@ -20,6 +20,8 @@
 int line = int.Parse(Console.ReadLine());
 string biggesKeg = "";
 double bigKeg = 0;
+
+
 for (int i = 0; i < line; i++)
 {
     string kegModel = Console.ReadLine();
