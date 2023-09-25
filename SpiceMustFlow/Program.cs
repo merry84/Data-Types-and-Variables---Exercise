@@ -22,18 +22,18 @@
 int yieldStart = int.Parse(Console.ReadLine());
 int spice = 0;
 int dayWork = 0;
-
-while (yieldStart >= 100)
-{
-
-    dayWork++;
-    spice+= yieldStart -26;//26 подправки всеки ден за работниците
-    yieldStart -= 10;// добивът пада с 10
-}
 if (yieldStart < 100 && dayWork == 0)
 {
     Console.WriteLine($"{dayWork}");
     Console.WriteLine($"{spice}");
 }
-else { spice -= 26; Console.WriteLine($"{dayWork}"); }
+else {
+    while (yieldStart >= 100)
+    {
+
+        dayWork++;
+        spice += yieldStart - 26;//26 подправки всеки ден за работниците
+        yieldStart -= 10;// добивът пада с 10
+    }
+    spice -= 26; Console.WriteLine($"{dayWork}"); }
 Console.WriteLine($"{spice}");
