@@ -15,7 +15,7 @@
 //After dividing, you should continue subtracting from N, until it becomes less than M. 
 //When N becomes less than M, you must take what has remained of N and the count of targets 
 //you've poked, and print them as output. 
- 
+
 //NOTE: When you are calculating percentages, you should be PRECISE at maximum. 
 //Example: 505 is NOT EXACTLY 50 % from 1000, its 50.5 %. 
 //Input 
@@ -32,8 +32,14 @@
 //•	The integer M will be in the range [1…1000000].
 //•	The integer Y will be in the range [0…9].
 //•	Allowed time / memory: 16 MB / 100ms.
-int n = int.Parse(Console.ReadLine());
-int m = int.Parse(Console.ReadLine());
-int y = int.Parse(Console.ReadLine());
+int power = int.Parse(Console.ReadLine());
+int distance = int.Parse(Console.ReadLine());
+int exhaustionFactor = int.Parse(Console.ReadLine());
+int count = 0;
+while(power>= distance)
+{
+    power -= distance;
+    count++;
+}
 
 
