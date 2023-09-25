@@ -32,14 +32,25 @@
 //•	The integer M will be in the range [1…1000000].
 //•	The integer Y will be in the range [0…9].
 //•	Allowed time / memory: 16 MB / 100ms.
+using System.ComponentModel.Design;
+
 int power = int.Parse(Console.ReadLine());
 int distance = int.Parse(Console.ReadLine());
 int exhaustionFactor = int.Parse(Console.ReadLine());
+double currentPokePower = power * 0.5;
 int count = 0;
-while(power>= distance)
+while (currentPokePower >= distance)
 {
     power -= distance;
     count++;
+
+    if (power == currentPokePower  && exhaustionFactor != 0)
+    {
+      power /= exhaustionFactor;
+    }
+    else { break; }
+   
+    
 }
-
-
+Console.WriteLine(currentPokePower);
+Console.WriteLine(count);
