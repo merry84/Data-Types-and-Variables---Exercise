@@ -39,7 +39,7 @@ int distance = int.Parse(Console.ReadLine());
 int exhaustionFactor = int.Parse(Console.ReadLine());
 double currentPokePower = power * 0.5;
 int count = 0;
-while (currentPokePower >= distance)
+while (power >= distance)
 {
     power -= distance;
     count++;
@@ -48,9 +48,7 @@ while (currentPokePower >= distance)
     {
       power /= exhaustionFactor;
     }
-    else { break; }
-   
-    
+     
 }
-Console.WriteLine(currentPokePower);
+Console.WriteLine(power);
 Console.WriteLine(count);
